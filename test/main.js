@@ -70,9 +70,12 @@ contract('Rad Test', accounts => {
         let _rad = await Rad.deployed()
         let _admin = await _rad.admin()
         let _reward = "You're Rad!"
-        let _generate = await _rad.generateReward(Bob, _reward)
-        let _claimant = await _rad.claimants(Bob)
-        assert.strictEqual(_claimant, _reward, 'Admin not equal')
+        let _post = await _rad.postReward(
+            Alice, 
+            "You're Rad!", 
+            true, 
+            false
+            )
     });
 
 })

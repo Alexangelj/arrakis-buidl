@@ -55,14 +55,14 @@
     "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/ERC1820ImplementerMock.sol",
     "exportedSymbols": {
       "ERC1820ImplementerMock": [
-        3772
+        3879
       ]
     },
-    "id": 3773,
+    "id": 3880,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3755,
+        "id": 3862,
         "literals": [
           "solidity",
           "^",
@@ -75,10 +75,10 @@
       {
         "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol",
         "file": "../introspection/ERC1820Implementer.sol",
-        "id": 3756,
+        "id": 3863,
         "nodeType": "ImportDirective",
-        "scope": 3773,
-        "sourceUnit": 2810,
+        "scope": 3880,
+        "sourceUnit": 2917,
         "src": "27:49:37",
         "symbolAliases": [],
         "unitAlias": ""
@@ -90,40 +90,40 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3757,
+              "id": 3864,
               "name": "ERC1820Implementer",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2809,
+              "referencedDeclaration": 2916,
               "src": "115:18:37",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC1820Implementer_$2809",
+                "typeIdentifier": "t_contract$_ERC1820Implementer_$2916",
                 "typeString": "contract ERC1820Implementer"
               }
             },
-            "id": 3758,
+            "id": 3865,
             "nodeType": "InheritanceSpecifier",
             "src": "115:18:37"
           }
         ],
         "contractDependencies": [
-          2809,
-          2831
+          2916,
+          2938
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3772,
+        "id": 3879,
         "linearizedBaseContracts": [
-          3772,
-          2809,
-          2831
+          3879,
+          2916,
+          2938
         ],
         "name": "ERC1820ImplementerMock",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3770,
+              "id": 3877,
               "nodeType": "Block",
               "src": "225:71:37",
               "statements": [
@@ -133,11 +133,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3766,
+                        "id": 3873,
                         "name": "interfaceHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3760,
+                        "referencedDeclaration": 3867,
                         "src": "265:13:37",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -146,11 +146,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 3767,
+                        "id": 3874,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3762,
+                        "referencedDeclaration": 3869,
                         "src": "280:7:37",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -169,18 +169,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 3765,
+                      "id": 3872,
                       "name": "_registerInterfaceForAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2808,
+                      "referencedDeclaration": 2915,
                       "src": "236:28:37",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
                         "typeString": "function (bytes32,address)"
                       }
                     },
-                    "id": 3768,
+                    "id": 3875,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -195,7 +195,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3769,
+                  "id": 3876,
                   "nodeType": "ExpressionStatement",
                   "src": "236:52:37"
                 }
@@ -203,7 +203,7 @@
             },
             "documentation": null,
             "functionSelector": "5536e45d",
-            "id": 3771,
+            "id": 3878,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -211,16 +211,16 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3763,
+              "id": 3870,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3760,
+                  "id": 3867,
                   "name": "interfaceHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3771,
+                  "scope": 3878,
                   "src": "178:21:37",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -229,7 +229,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 3759,
+                    "id": 3866,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "178:7:37",
@@ -243,11 +243,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3762,
+                  "id": 3869,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3771,
+                  "scope": 3878,
                   "src": "201:15:37",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -256,7 +256,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3761,
+                    "id": 3868,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "201:7:37",
@@ -273,19 +273,19 @@
               "src": "177:40:37"
             },
             "returnParameters": {
-              "id": 3764,
+              "id": 3871,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "225:0:37"
             },
-            "scope": 3772,
+            "scope": 3879,
             "src": "141:155:37",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 3773,
+        "scope": 3880,
         "src": "80:219:37"
       }
     ],
@@ -295,14 +295,14 @@
     "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/ERC1820ImplementerMock.sol",
     "exportedSymbols": {
       "ERC1820ImplementerMock": [
-        3772
+        3879
       ]
     },
-    "id": 3773,
+    "id": 3880,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3755,
+        "id": 3862,
         "literals": [
           "solidity",
           "^",
@@ -315,10 +315,10 @@
       {
         "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/introspection/ERC1820Implementer.sol",
         "file": "../introspection/ERC1820Implementer.sol",
-        "id": 3756,
+        "id": 3863,
         "nodeType": "ImportDirective",
-        "scope": 3773,
-        "sourceUnit": 2810,
+        "scope": 3880,
+        "sourceUnit": 2917,
         "src": "27:49:37",
         "symbolAliases": [],
         "unitAlias": ""
@@ -330,40 +330,40 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3757,
+              "id": 3864,
               "name": "ERC1820Implementer",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2809,
+              "referencedDeclaration": 2916,
               "src": "115:18:37",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC1820Implementer_$2809",
+                "typeIdentifier": "t_contract$_ERC1820Implementer_$2916",
                 "typeString": "contract ERC1820Implementer"
               }
             },
-            "id": 3758,
+            "id": 3865,
             "nodeType": "InheritanceSpecifier",
             "src": "115:18:37"
           }
         ],
         "contractDependencies": [
-          2809,
-          2831
+          2916,
+          2938
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3772,
+        "id": 3879,
         "linearizedBaseContracts": [
-          3772,
-          2809,
-          2831
+          3879,
+          2916,
+          2938
         ],
         "name": "ERC1820ImplementerMock",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3770,
+              "id": 3877,
               "nodeType": "Block",
               "src": "225:71:37",
               "statements": [
@@ -373,11 +373,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 3766,
+                        "id": 3873,
                         "name": "interfaceHash",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3760,
+                        "referencedDeclaration": 3867,
                         "src": "265:13:37",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -386,11 +386,11 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 3767,
+                        "id": 3874,
                         "name": "account",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3762,
+                        "referencedDeclaration": 3869,
                         "src": "280:7:37",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -409,18 +409,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 3765,
+                      "id": 3872,
                       "name": "_registerInterfaceForAddress",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2808,
+                      "referencedDeclaration": 2915,
                       "src": "236:28:37",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
                         "typeString": "function (bytes32,address)"
                       }
                     },
-                    "id": 3768,
+                    "id": 3875,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -435,7 +435,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3769,
+                  "id": 3876,
                   "nodeType": "ExpressionStatement",
                   "src": "236:52:37"
                 }
@@ -443,7 +443,7 @@
             },
             "documentation": null,
             "functionSelector": "5536e45d",
-            "id": 3771,
+            "id": 3878,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -451,16 +451,16 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3763,
+              "id": 3870,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3760,
+                  "id": 3867,
                   "name": "interfaceHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3771,
+                  "scope": 3878,
                   "src": "178:21:37",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -469,7 +469,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 3759,
+                    "id": 3866,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "178:7:37",
@@ -483,11 +483,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3762,
+                  "id": 3869,
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3771,
+                  "scope": 3878,
                   "src": "201:15:37",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -496,7 +496,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3761,
+                    "id": 3868,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "201:7:37",
@@ -513,19 +513,19 @@
               "src": "177:40:37"
             },
             "returnParameters": {
-              "id": 3764,
+              "id": 3871,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "225:0:37"
             },
-            "scope": 3772,
+            "scope": 3879,
             "src": "141:155:37",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 3773,
+        "scope": 3880,
         "src": "80:219:37"
       }
     ],
@@ -537,7 +537,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-02-15T19:49:03.993Z",
+  "updatedAt": "2020-02-15T23:11:41.147Z",
   "devdoc": {
     "methods": {}
   },
