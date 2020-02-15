@@ -6,7 +6,7 @@ import RadAbi from './abi/bin/Rad.abi';
 import axios from 'axios';
 
 const WEB3_HOST = "http://localhost:7545";
-const RAD_CONTRACT_ADDRESS = "0x41f4fCc002F50325059F35A028824039Cb58cb7E";
+const RAD_CONTRACT_ADDRESS = "0x07948942045B27c795462AE594179c8297E8Ea43";
 
 class App extends Component {
   constructor(props) {

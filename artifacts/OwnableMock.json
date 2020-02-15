@@ -67,25 +67,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.      * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol\":\"OwnableMock\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x4b1d0ba51adeaf6fbdd74575980939e3377d928f935ead03c27c04097e1ef9b6\",\"urls\":[\"bzz-raw://58f8f3877d9ec2131de69ea2d79c73f5f1fb36ac61dc1db950bbd11aa5f8952f\",\"dweb:/ipfs/QmaMkdu1zCyj4dNsLS3WYAVVt8aWwDm7jKDgeFKURVP56K\"]},\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol\":{\"keccak256\":\"0x278ed5e962cc49036115a65d5319fde7ce8a209d747ce261da6392e9d3e131e0\",\"urls\":[\"bzz-raw://2c5e240ef4ee7e21844c946deb187bf6b875bb8c091f67b7970a4b96a293b15f\",\"dweb:/ipfs/QmR8a6nXSfP8he3BunNMY1t4R9D22ZtLt3PFmTZdaZp2yW\"]},\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0x472b636c643dc66c0a441c56923cb33966f4721c818f149b37840ec2e3d12439\",\"urls\":[\"bzz-raw://81073e63f8374914beb825fde06598a39060d15a3ee19431623457a3e9feeaca\",\"dweb:/ipfs/QmScvgwTXyEjWXPziYpoH9uzrjNscaPmmHd8Gt7VwracTo\"]}},\"version\":1}",
-  "bytecode": "0x608060405260006100146100b760201b60201c565b9050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3506100bf565b600033905090565b6104f9806100ce6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063715018a6146100515780638da5cb5b1461005b5780638f32d59b146100a5578063f2fde38b146100c7575b600080fd5b61005961010b565b005b610063610244565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ad61026d565b604051808215151515815260200191505060405180910390f35b610109600480360360208110156100dd57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102cb565b005b61011361026d565b610185576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166102af610351565b73ffffffffffffffffffffffffffffffffffffffff1614905090565b6102d361026d565b610345576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b61034e81610359565b50565b600033905090565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103df576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602681526020018061049e6026913960400191505060405180910390fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a264697066735822122074173d578e2fa3d9c9fbfc08a647aad7212f45e3485581c4f69e8bf650791dc764736f6c63430006000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063715018a6146100515780638da5cb5b1461005b5780638f32d59b146100a5578063f2fde38b146100c7575b600080fd5b61005961010b565b005b610063610244565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ad61026d565b604051808215151515815260200191505060405180910390f35b610109600480360360208110156100dd57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102cb565b005b61011361026d565b610185576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166102af610351565b73ffffffffffffffffffffffffffffffffffffffff1614905090565b6102d361026d565b610345576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b61034e81610359565b50565b600033905090565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103df576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602681526020018061049e6026913960400191505060405180910390fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a264697066735822122074173d578e2fa3d9c9fbfc08a647aad7212f45e3485581c4f69e8bf650791dc764736f6c63430006000033",
-  "sourceMap": "65:35:61:-:0;;;719:17:73;739:12;:10;;;:12;;:::i;:::-;719:32;;771:9;762:6;;:18;;;;;;;;;;;;;;;;;;829:9;796:43;;825:1;796:43;;;;;;;;;;;;684:163;65:35:61;;752:106:2;805:15;840:10;833:17;;752:106;:::o;65:35:61:-;;;;;;;",
-  "deployedSourceMap": "65:35:61:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;65:35:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1739:148:73;;;:::i;:::-;;928:79;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1294:94;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;2042:117;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2042:117:73;;;;;;;;;;;;;;;;;;;:::i;:::-;;1739:148;1140:9;:7;:9::i;:::-;1132:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1846:1:::1;1809:40;;1830:6;::::0;::::1;;;;;;;;;1809:40;;;;;;;;;;;;1877:1;1860:6:::0;::::1;:19;;;;;;;;;;;;;;;;;;1739:148::o:0;928:79::-;966:7;993:6;;;;;;;;;;;986:13;;928:79;:::o;1294:94::-;1334:4;1374:6;;;;;;;;;;;1358:22;;:12;:10;:12::i;:::-;:22;;;1351:29;;1294:94;:::o;2042:117::-;1140:9;:7;:9::i;:::-;1132:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2123:28:::1;2142:8;2123:18;:28::i;:::-;2042:117:::0;:::o;752:106:2:-;805:15;840:10;833:17;;752:106;:::o;2265:237:73:-;2367:1;2347:22;;:8;:22;;;;2339:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2457:8;2428:38;;2449:6;;;;;;;;;;;2428:38;;;;;;;;;;;;2486:8;2477:6;;:17;;;;;;;;;;;;;;;;;;2265:237;:::o",
-  "source": "pragma solidity ^0.6.0;\r\n\r\nimport \"../ownership/Ownable.sol\";\r\n\r\ncontract OwnableMock is Ownable { }\r\n",
-  "sourcePath": "C:\\Users\\alexa_o12f\\Documents\\Programs\\arrakis-buidl\\contracts\\openzeppelin\\contracts\\mocks\\OwnableMock.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol\":\"OwnableMock\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x0de74dfa6b37943c1b834cbd8fb7a8d052e5ff80c7adb33692102dd6cd2985e9\",\"urls\":[\"bzz-raw://9d2d827fcf4a838f5821732c0acd6a40d21c2a5a2cfe2563feec91465f47bb60\",\"dweb:/ipfs/Qmex3wMKf5Sghbfvr288RUg1kP2uAyTMf11w83WbMbpQQc\"]},\"/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol\":{\"keccak256\":\"0x67a7f5781ed67284a1191d223138ca36a2e1256da5f28a788dc4a14c20b6e5bc\",\"urls\":[\"bzz-raw://80c76b67880a7fc555844fe2fc6f19c6b51a68cf7b93995603b8822a82ee5b65\",\"dweb:/ipfs/Qmb8ng5PUeQXMLQ4G3d26m8pKDa4gLQUBhMfLUj22gsWKT\"]},\"/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0x039ba4cb83f1b30a3c575283aebeab66035aa4a3d5c88e73a67dbfba3691ac23\",\"urls\":[\"bzz-raw://7e319b9647837e7b286b01ef90e1b2dc62aea6d17acc11145c822193b6454db1\",\"dweb:/ipfs/QmW5vUEeePdJfj3abT8XHcZKideyCpSuDnz65Vfp6yu62P\"]}},\"version\":1}",
+  "bytecode": "0x608060405260006100146100b760201b60201c565b9050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508073ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3506100bf565b600033905090565b6104f9806100ce6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063715018a6146100515780638da5cb5b1461005b5780638f32d59b146100a5578063f2fde38b146100c7575b600080fd5b61005961010b565b005b610063610244565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ad61026d565b604051808215151515815260200191505060405180910390f35b610109600480360360208110156100dd57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102cb565b005b61011361026d565b610185576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166102af610351565b73ffffffffffffffffffffffffffffffffffffffff1614905090565b6102d361026d565b610345576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b61034e81610359565b50565b600033905090565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103df576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602681526020018061049e6026913960400191505060405180910390fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a2646970667358221220c8320c53eae16e349942de1b9cb4ac4089556da4f327dabb7dd60ec15016a68264736f6c63430006000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063715018a6146100515780638da5cb5b1461005b5780638f32d59b146100a5578063f2fde38b146100c7575b600080fd5b61005961010b565b005b610063610244565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ad61026d565b604051808215151515815260200191505060405180910390f35b610109600480360360208110156100dd57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102cb565b005b61011361026d565b610185576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166102af610351565b73ffffffffffffffffffffffffffffffffffffffff1614905090565b6102d361026d565b610345576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260208152602001807f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657281525060200191505060405180910390fd5b61034e81610359565b50565b600033905090565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156103df576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602681526020018061049e6026913960400191505060405180910390fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a2646970667358221220c8320c53eae16e349942de1b9cb4ac4089556da4f327dabb7dd60ec15016a68264736f6c63430006000033",
+  "sourceMap": "61:35:61:-:0;;;698:17:73;718:12;:10;;;:12;;:::i;:::-;698:32;;749:9;740:6;;:18;;;;;;;;;;;;;;;;;;806:9;773:43;;802:1;773:43;;;;;;;;;;;;664:159;61:35:61;;735:104:2;788:15;822:10;815:17;;735:104;:::o;61:35:61:-;;;;;;;",
+  "deployedSourceMap": "61:35:61:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;61:35:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1684:145:73;;;:::i;:::-;;899:77;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1250:92;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1978:115;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1978:115:73;;;;;;;;;;;;;;;;;;;:::i;:::-;;1684:145;1103:9;:7;:9::i;:::-;1095:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1790:1:::1;1753:40;;1774:6;::::0;::::1;;;;;;;;;1753:40;;;;;;;;;;;;1820:1;1803:6:::0;::::1;:19;;;;;;;;;;;;;;;;;;1684:145::o:0;899:77::-;937:7;963:6;;;;;;;;;;;956:13;;899:77;:::o;1250:92::-;1290:4;1329:6;;;;;;;;;;;1313:22;;:12;:10;:12::i;:::-;:22;;;1306:29;;1250:92;:::o;1978:115::-;1103:9;:7;:9::i;:::-;1095:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2058:28:::1;2077:8;2058:18;:28::i;:::-;1978:115:::0;:::o;735:104:2:-;788:15;822:10;815:17;;735:104;:::o;2194:233:73:-;2295:1;2275:22;;:8;:22;;;;2267:73;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2384:8;2355:38;;2376:6;;;;;;;;;;;2355:38;;;;;;;;;;;;2412:8;2403:6;;:17;;;;;;;;;;;;;;;;;;2194:233;:::o",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"../ownership/Ownable.sol\";\n\ncontract OwnableMock is Ownable { }\n",
+  "sourcePath": "/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol",
   "ast": {
-    "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol",
+    "absolutePath": "/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol",
     "exportedSymbols": {
       "OwnableMock": [
-        5348
+        5382
       ]
     },
-    "id": 5349,
+    "id": 5383,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5344,
+        "id": 5378,
         "literals": [
           "solidity",
           "^",
@@ -96,13 +96,13 @@
         "src": "0:23:61"
       },
       {
-        "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/ownership/Ownable.sol",
+        "absolutePath": "/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/ownership/Ownable.sol",
         "file": "../ownership/Ownable.sol",
-        "id": 5345,
+        "id": 5379,
         "nodeType": "ImportDirective",
-        "scope": 5349,
-        "sourceUnit": 6362,
-        "src": "27:34:61",
+        "scope": 5383,
+        "sourceUnit": 6396,
+        "src": "25:34:61",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -113,55 +113,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 5346,
+              "id": 5380,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6361,
-              "src": "89:7:61",
+              "referencedDeclaration": 6395,
+              "src": "85:7:61",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$6361",
+                "typeIdentifier": "t_contract$_Ownable_$6395",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 5347,
+            "id": 5381,
             "nodeType": "InheritanceSpecifier",
-            "src": "89:7:61"
+            "src": "85:7:61"
           }
         ],
         "contractDependencies": [
-          225,
-          6361
+          259,
+          6395
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 5348,
+        "id": 5382,
         "linearizedBaseContracts": [
-          5348,
-          6361,
-          225
+          5382,
+          6395,
+          259
         ],
         "name": "OwnableMock",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 5349,
-        "src": "65:35:61"
+        "scope": 5383,
+        "src": "61:35:61"
       }
     ],
-    "src": "0:102:61"
+    "src": "0:97:61"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol",
+    "absolutePath": "/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/mocks/OwnableMock.sol",
     "exportedSymbols": {
       "OwnableMock": [
-        5348
+        5382
       ]
     },
-    "id": 5349,
+    "id": 5383,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5344,
+        "id": 5378,
         "literals": [
           "solidity",
           "^",
@@ -172,13 +172,13 @@
         "src": "0:23:61"
       },
       {
-        "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/ownership/Ownable.sol",
+        "absolutePath": "/Users/brock/Documents/GitHub/arrakis-buidl/contracts/openzeppelin/contracts/ownership/Ownable.sol",
         "file": "../ownership/Ownable.sol",
-        "id": 5345,
+        "id": 5379,
         "nodeType": "ImportDirective",
-        "scope": 5349,
-        "sourceUnit": 6362,
-        "src": "27:34:61",
+        "scope": 5383,
+        "sourceUnit": 6396,
+        "src": "25:34:61",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -189,42 +189,42 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 5346,
+              "id": 5380,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6361,
-              "src": "89:7:61",
+              "referencedDeclaration": 6395,
+              "src": "85:7:61",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$6361",
+                "typeIdentifier": "t_contract$_Ownable_$6395",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 5347,
+            "id": 5381,
             "nodeType": "InheritanceSpecifier",
-            "src": "89:7:61"
+            "src": "85:7:61"
           }
         ],
         "contractDependencies": [
-          225,
-          6361
+          259,
+          6395
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 5348,
+        "id": 5382,
         "linearizedBaseContracts": [
-          5348,
-          6361,
-          225
+          5382,
+          6395,
+          259
         ],
         "name": "OwnableMock",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 5349,
-        "src": "65:35:61"
+        "scope": 5383,
+        "src": "61:35:61"
       }
     ],
-    "src": "0:102:61"
+    "src": "0:97:61"
   },
   "compiler": {
     "name": "solc",
@@ -232,7 +232,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-02-15T23:11:41.304Z",
+  "updatedAt": "2020-02-15T23:43:10.316Z",
   "devdoc": {
     "methods": {
       "isOwner()": {
@@ -242,7 +242,7 @@
         "details": "Returns the address of the current owner."
       },
       "renounceOwnership()": {
-        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.      * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
       },
       "transferOwnership(address)": {
         "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
