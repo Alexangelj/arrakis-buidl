@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import logo from './bufficorn.png';
 import './App.css';
 import Web3 from 'web3';
+import RadAbi from './abi/bin/Rad.abi';
+import axios from 'axios';
+
+const WEB3_HOST = "http://localhost:7545";
+const RAD_CONTRACT_ADDRESS = "0x41f4fCc002F50325059F35A028824039Cb58cb7E";
 
 class App extends Component {
   constructor(props) {
@@ -9,15 +14,29 @@ class App extends Component {
     this.state = {
       defaultAccount: ""
     };
-    this.web3 = new Web3("http://localhost:7545");
+    this.web3 = new Web3(WEB3_HOST);
   }
   async getDefaultAccount() {
     let accounts = await this.web3.eth.getAccounts();
     return accounts[0];
   }
+  async contract(contract_abi, contract_address) {
+    return new this.web3.eth.Contract(contract_abi, contract_address, {
+      from: this.state.defaultAccount, // default from address
+      gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
+    });
+  }
   async componentDidMount() {
     const defaultAccount = await this.getDefaultAccount();
-    this.setState({ defaultAccount });
+    const rad_abi = await this.getAbi(RadAbi);
+    let rad_contract = await this.contract(rad_abi, RAD_CONTRACT_ADDRESS);
+    let admin = await rad_contract.methods.admin().call();
+    console.log(admin);
+    this.setState({ defaultAccount, rad_contract });
+  }
+  async getAbi(file) {
+    let response = await axios.get(file);
+    return response.data;
   }
   render() {
     return (
