@@ -1,7 +1,8 @@
 
-const Test = artifacts.require("Test");
+const Rad = artifacts.require("Rad");
+const assert = require('assert').strict;
 
-contract('Test Test', accounts => {
+contract('Rad Test', accounts => {
 
 
     // Starting users to use in test
@@ -60,8 +61,18 @@ contract('Test Test', accounts => {
     }
 
     it('Migrates and initializes correctly', async () => {
-        let _test = await Test.deployed()
-        console.log(((await _test.balanceOf(Alice))/decimals).toString())
+        let _rad = await Rad.deployed()
+        let _admin = await _rad.admin() 
+        assert.strictEqual(_admin, Alice, 'Admin not equal')
+    });
+
+    it('Generate Reward Function Test', async () => {
+        let _rad = await Rad.deployed()
+        let _admin = await _rad.admin()
+        let _reward = "You're Rad!"
+        let _generate = await _rad.generateReward(Bob, _reward)
+        let _claimant = await _rad.claimants(Bob)
+        assert.strictEqual(_claimant, _reward, 'Admin not equal')
     });
 
 })

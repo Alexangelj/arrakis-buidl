@@ -1,5 +1,5 @@
-const Test = artifacts.require("Test");
+const Rad = artifacts.require("Rad");
 
 module.exports = function(deployer) {
-  deployer.deploy(Test, 10000, 'test', 18, 'TST');
+  deployer.deploy(Rad);
 };

@@ -1,0 +1,476 @@
+{
+  "contractName": "StringsMock",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "fromUint256",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"fromUint256\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/StringsMock.sol\":\"StringsMock\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/drafts/Strings.sol\":{\"keccak256\":\"0xd3d20e2563738cce15f7d33bf934ffb593f4ef0e3e6ddb5b853ee68c3303083b\",\"urls\":[\"bzz-raw://f2b9666eabda13de9e47117c561c172db118d9a365c8eed3d740f341b923b7f3\",\"dweb:/ipfs/QmPc4nhdizsoecokp6YYTe7mNpVGUzTYH7BnqKAtrMpRXB\"]},\"/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/StringsMock.sol\":{\"keccak256\":\"0x84285fbf29179f8deb36614141697f9b0300644e0c47894cd4e980d4746c08e6\",\"urls\":[\"bzz-raw://0a95455fcdf6d1b6590ba533db56d2d699df51b38764528dd3a86e4f6c341fd6\",\"dweb:/ipfs/QmbF1L1pdDW9iAyVRHMjYQkZiEh1bhhkamgqdkz6QgCDEV\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061024f806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063a2bd364414610030575b600080fd5b61005c6004803603602081101561004657600080fd5b81019080803590602001909291905050506100d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009c578082015181840152602081019050610081565b50505050905090810190601f1680156100c95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606100e2826100e9565b9050919050565b60606000821415610131576040518060400160405280600181526020017f30000000000000000000000000000000000000000000000000000000000000008152509050610214565b600082905060005b6000821461015b578080600101915050600a828161015357fe5b049150610139565b6060816040519080825280601f01601f1916602001820160405280156101905781602001600182028038833980820191505090505b50905060006001830390508593505b6000841461020c57600a84816101b157fe5b0660300160f81b828280600190039350815181106101cb57fe5b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350600a848161020457fe5b04935061019f565b819450505050505b91905056fea2646970667358221220ba6f1fd80b8b90a86a72a84a5d735804fc2501cffb4fd32f0b0acaa63cbbf71264736f6c63430006000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063a2bd364414610030575b600080fd5b61005c6004803603602081101561004657600080fd5b81019080803590602001909291905050506100d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009c578082015181840152602081019050610081565b50505050905090810190601f1680156100c95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60606100e2826100e9565b9050919050565b60606000821415610131576040518060400160405280600181526020017f30000000000000000000000000000000000000000000000000000000000000008152509050610214565b600082905060005b6000821461015b578080600101915050600a828161015357fe5b049150610139565b6060816040519080825280601f01601f1916602001820160405280156101905781602001600182028038833980820191505090505b50905060006001830390508593505b6000841461020c57600a84816101b157fe5b0660300160f81b828280600190039350815181106101cb57fe5b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350600a848161020457fe5b04935061019f565b819450505050505b91905056fea2646970667358221220ba6f1fd80b8b90a86a72a84a5d735804fc2501cffb4fd32f0b0acaa63cbbf71264736f6c63430006000033",
+  "sourceMap": "62:155:72:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:155:72;;;;;;;",
+  "deployedSourceMap": "62:155:72:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:155:72;;;;;;;;;;;;;;;;;;;90:124;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;90:124:72;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;90:124:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;147:13;180:26;200:5;180:19;:26::i;:::-;173:33;;90:124;;;:::o;330:556:15:-;389:13;428:1;419:5;:10;415:53;;;446:10;;;;;;;;;;;;;;;;;;;;;415:53;478:12;493:5;478:20;;509:14;534:78;549:1;541:4;:9;534:78;;567:8;;;;;;;598:2;590:10;;;;;;;;;534:78;;;622:19;654:6;644:17;;;;;;;;;;;;;;;;;;;;;;;;;29:1:-1;21:6;17:14;116:4;104:10;96:6;87:34;147:4;139:6;135:17;125:27;;0:156;644:17:15;;;;622:39;;672:13;697:1;688:6;:10;672:26;;716:5;709:12;;732:115;747:1;739:4;:9;732:115;;806:2;799:4;:9;;;;;;794:2;:14;783:27;;765:6;772:7;;;;;;;765:15;;;;;;;;;;;:45;;;;;;;;;;;833:2;825:10;;;;;;;;;732:115;;;871:6;857:21;;;;;;330:556;;;;:::o",
+  "source": "pragma solidity ^0.6.0;\r\n\r\nimport \"../drafts/Strings.sol\";\r\n\r\ncontract StringsMock {\r\n    function fromUint256(uint256 value) public pure returns (string memory) {\r\n        return Strings.fromUint256(value);\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\alexa_o12f\\Documents\\Programs\\arrakis-buidl\\contracts\\openzeppelin\\contracts\\mocks\\StringsMock.sol",
+  "ast": {
+    "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/StringsMock.sol",
+    "exportedSymbols": {
+      "StringsMock": [
+        6132
+      ]
+    },
+    "id": 6133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6117,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:72"
+      },
+      {
+        "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/drafts/Strings.sol",
+        "file": "../drafts/Strings.sol",
+        "id": 6118,
+        "nodeType": "ImportDirective",
+        "scope": 6133,
+        "sourceUnit": 2142,
+        "src": "27:31:72",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6132,
+        "linearizedBaseContracts": [
+          6132
+        ],
+        "name": "StringsMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 6130,
+              "nodeType": "Block",
+              "src": "162:52:72",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6127,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6120,
+                        "src": "200:5:72",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6125,
+                        "name": "Strings",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2141,
+                        "src": "180:7:72",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Strings_$2141_$",
+                          "typeString": "type(library Strings)"
+                        }
+                      },
+                      "id": 6126,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "fromUint256",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2140,
+                      "src": "180:19:72",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (string memory)"
+                      }
+                    },
+                    "id": 6128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "180:26:72",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 6124,
+                  "id": 6129,
+                  "nodeType": "Return",
+                  "src": "173:33:72"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "a2bd3644",
+            "id": 6131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fromUint256",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6120,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6131,
+                  "src": "111:13:72",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6119,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "111:7:72",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "110:15:72"
+            },
+            "returnParameters": {
+              "id": 6124,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6123,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6131,
+                  "src": "147:13:72",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6122,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:6:72",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:15:72"
+            },
+            "scope": 6132,
+            "src": "90:124:72",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6133,
+        "src": "62:155:72"
+      }
+    ],
+    "src": "0:219:72"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/mocks/StringsMock.sol",
+    "exportedSymbols": {
+      "StringsMock": [
+        6132
+      ]
+    },
+    "id": 6133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6117,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:72"
+      },
+      {
+        "absolutePath": "/C/Users/alexa_o12f/Documents/Programs/arrakis-buidl/contracts/openzeppelin/contracts/drafts/Strings.sol",
+        "file": "../drafts/Strings.sol",
+        "id": 6118,
+        "nodeType": "ImportDirective",
+        "scope": 6133,
+        "sourceUnit": 2142,
+        "src": "27:31:72",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6132,
+        "linearizedBaseContracts": [
+          6132
+        ],
+        "name": "StringsMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 6130,
+              "nodeType": "Block",
+              "src": "162:52:72",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6127,
+                        "name": "value",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6120,
+                        "src": "200:5:72",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6125,
+                        "name": "Strings",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2141,
+                        "src": "180:7:72",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Strings_$2141_$",
+                          "typeString": "type(library Strings)"
+                        }
+                      },
+                      "id": 6126,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "fromUint256",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2140,
+                      "src": "180:19:72",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (string memory)"
+                      }
+                    },
+                    "id": 6128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "180:26:72",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 6124,
+                  "id": 6129,
+                  "nodeType": "Return",
+                  "src": "173:33:72"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "a2bd3644",
+            "id": 6131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fromUint256",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6120,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6131,
+                  "src": "111:13:72",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6119,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "111:7:72",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "110:15:72"
+            },
+            "returnParameters": {
+              "id": 6124,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6123,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6131,
+                  "src": "147:13:72",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6122,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:6:72",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:15:72"
+            },
+            "scope": 6132,
+            "src": "90:124:72",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6133,
+        "src": "62:155:72"
+      }
+    ],
+    "src": "0:219:72"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.0+commit.26b70077.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-02-15T19:49:04.243Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
