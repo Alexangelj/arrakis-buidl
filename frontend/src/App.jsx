@@ -11,7 +11,7 @@ import axios from 'axios';
 
 // pages
 import Admin from './pages/Admin';
-import Create from './pages/Create';
+import PostReward from './pages/PostReward';
 import Claim from './pages/Claim';
 import Home from './pages/Home';
 
@@ -71,10 +71,10 @@ class App extends Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/claim">Claim</Link>
+                <Link to="/claim">Claim Reward</Link>
               </li>
               <li>
-                <Link to="/create">Create</Link>
+                <Link to="/postreward">Post Reward</Link>
               </li>
               <li>
                 <Link to="/admin">Admin</Link>
@@ -87,8 +87,8 @@ class App extends Component {
             <Route path="/claim">
               <Claim state={this.state} />
             </Route>
-            <Route path="/create">
-              <Create state={this.state} />
+            <Route path="/postreward">
+              <PostReward state={this.state} />
             </Route>
             <Route path="/admin">
               <Admin state={this.state} />

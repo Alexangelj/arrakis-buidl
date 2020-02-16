@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, FormControl, InputGroup, Row, Col } from 'react-bootstrap';
 
-class Create extends Component {
+class PostReward extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -67,9 +67,10 @@ class Create extends Component {
     render() {
         console.log(this.state.rewards);
         return <div className="container">
-            Create
+
             <Row>
                 <Col sm={6}>
+                    <span>Post Reward</span>
                     <InputGroup className="mb-3">
                         <FormControl
                             placeholder="Source Address"
@@ -99,6 +100,7 @@ class Create extends Component {
                     <Button onClick={this.submit}>Submit</Button>
                 </Col>
                 <Col sm={6}>
+                    <span>Available Rewards</span>
                     <table>
                         <tbody>
                             {this.state.rewards !== [] ? this.state.rewards.map((val, idx, arr) => {
@@ -120,4 +122,4 @@ class Create extends Component {
     }
 }
 
-export default Create;
+export default PostReward;

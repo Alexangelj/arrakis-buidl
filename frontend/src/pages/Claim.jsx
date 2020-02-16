@@ -33,21 +33,17 @@ class Claim extends Component {
     }
     render() {
         return <div className="container">
-            Claim
-            <Row>
-                <Col sm={6}>
-                    <InputGroup className="mb-3">
-                        <FormControl
-                            placeholder="ID"
-                            aria-label="ID"
-                            aria-describedby="basic-addon1"
-                            onChange={(e) => this.setId(e.target.value)}
-                            value={this.state.id}
-                        />
-                    </InputGroup>
-                    <Button onClick={this.submit}>Submit</Button>
-                </Col>
-            </Row>
+            <span>Claim Reward</span>
+            <InputGroup className="mb-3">
+                <FormControl
+                    placeholder="ID"
+                    aria-label="ID"
+                    aria-describedby="basic-addon1"
+                    onChange={(e) => this.setId(e.target.value)}
+                    value={this.state.id}
+                />
+            </InputGroup>
+            <Button onClick={this.submit}>Submit</Button>
             <div>
                 <p>ID: {this.state.id}</p>
             </div>
