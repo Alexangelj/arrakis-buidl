@@ -139,7 +139,7 @@ class Admin extends Component {
                             <tr>
                                 <td><em>id</em></td>
                                 <td><em>claims</em></td>
-                                <td><em>reward</em></td>
+                                <td><em>MicroBounty Reward</em></td>
                             </tr>
                         </thead>
                         <tbody>

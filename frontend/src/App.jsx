@@ -19,7 +19,7 @@ import Home from './pages/Home';
 import RadAbi from './abi/bin/Rad.abi';
 
 const WEB3_HOST = "http://localhost:7545";
-const RAD_CONTRACT_ADDRESS = "0x812124c376e1141Ab4686b331fa60391Bc50Abaa";
+const RAD_CONTRACT_ADDRESS = "0xcddCD6B40DFC4586Af32276Be946Da5fD4aa7F13";
 
 class App extends Component {
   constructor(props) {

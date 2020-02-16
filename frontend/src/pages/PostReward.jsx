@@ -73,7 +73,7 @@ class PostReward extends Component {
                     <span>Post Reward</span>
                     <InputGroup className="mb-3">
                         <FormControl
-                            placeholder="Source Address"
+                            placeholder="Contract Address"
                             aria-label="Source Address"
                             aria-describedby="basic-addon1"
                             onChange={(e) => this.setSource(e.target.value)}
@@ -82,7 +82,7 @@ class PostReward extends Component {
                     </InputGroup>
                     <InputGroup className="mb-3">
                         <FormControl
-                            placeholder="Reward Text"
+                            placeholder="MicroBounty Reward"
                             aria-label="Reward Text"
                             aria-describedby="basic-addon1"
                             onChange={(e) => this.setReward(e.target.value)}
@@ -108,7 +108,7 @@ class PostReward extends Component {
                         <thead>
                             <tr>
                                 <td><em>ID</em></td>
-                                <td><em>Reward</em></td>
+                                <td><em>MicroBounty Reward</em></td>
                             </tr>
                         </thead>
                         <tbody>
