@@ -18,6 +18,7 @@ const MyChart = (props) => {
 
         ],
         [layoutdata]
+        // []
     );
     const series = React.useMemo(
         () => ({
@@ -76,15 +77,17 @@ class Admin extends Component {
         let nonce = await this.getNonce();
         let claims = [];
         for (let i = 0; i < nonce; i++) {
-            let res = await c.methods._timesClaimed(i).call();
+            let numClaims = await c.methods._timesClaimed(i).call();
+            let reward = await c.methods.rewardString(i).call();
             let item = {
                 "id": i,
-                "claims": res
+                "claims": numClaims,
+                "reward": reward
             };
             claims.push(item);
         }
         claims.push({
-            "id": -1,
+            "id": -0.1,
             claims: 0
         });
         return claims;
@@ -134,17 +137,19 @@ class Admin extends Component {
                     <table style={{ marginLeft: 40 }}>
                         <thead>
                             <tr>
-                                <td>id</td>
-                                <td>claims</td>
+                                <td><em>id</em></td>
+                                <td><em>claims</em></td>
+                                <td><em>reward</em></td>
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 this.state.claims.map((val, idx, arr) => {
-                                    return <tr key={idx}>
+                                    return idx < arr.length - 1 ? <tr key={idx}>
                                         <td>{val.id}</td>
                                         <td>{val.claims}</td>
-                                    </tr>;
+                                        <td style={{ textAlign: "left", paddingLeft: 24 }}>{val.reward}</td>
+                                    </tr> : null;
                                 })
                             }
                         </tbody>
@@ -155,8 +160,8 @@ class Admin extends Component {
                     <table style={{ marginLeft: 40 }}>
                         <thead>
                             <tr>
-                                <td>address</td>
-                                <td>claims</td>
+                                <td><em>address</em></td>
+                                <td><em>claims</em></td>
                             </tr>
                         </thead>
                         <tbody>

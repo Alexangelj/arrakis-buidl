@@ -89,24 +89,33 @@ class PostReward extends Component {
                             value={this.state.reward}
                         />
                     </InputGroup>
+
                     <InputGroup className="mb-3">
                         <InputGroup.Radio name="erc" aria-label="Erc20" onClick={() => this.setErc("erc20")} checked={this.state.erc === "erc20"} />
                         ERC20
                     </InputGroup>
+
                     <InputGroup className="mb-3">
                         <InputGroup.Radio name="erc" aria-label="NFT" onClick={() => this.setErc("erc721")} checked={this.state.erc === "erc721"} />
                         NFT
                     </InputGroup>
+
                     <Button onClick={this.submit}>Submit</Button>
                 </Col>
                 <Col sm={6}>
                     <span>Available Rewards</span>
                     <table>
+                        <thead>
+                            <tr>
+                                <td><em>ID</em></td>
+                                <td><em>Reward</em></td>
+                            </tr>
+                        </thead>
                         <tbody>
                             {this.state.rewards !== [] ? this.state.rewards.map((val, idx, arr) => {
                                 return <tr key={idx}>
                                     <td><code>{idx}</code></td>
-                                    <td>{val}</td>
+                                    <td style={{ textAlign: "left" }}>{val}</td>
                                 </tr>
                             }) : <></>}
                         </tbody>
