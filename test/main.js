@@ -90,4 +90,29 @@ contract('Rad Test', accounts => {
         assert.strictEqual(_testBal.toString(), totalSupply, 'Supply should equal test balance');
     });
 
+    it('Checks Reward Claimants', async () => {
+        var totalSupply = (10**18).toString()
+        let _rad = await Rad.deployed()
+        let _token = await Test20.deployed()
+        let _tokenAddress = _token.address
+        let _admin = await _rad.admin()
+        let _poster = Alice
+        let _claimant = Alice
+        let _reward = "You're Rad!"
+        let _post = await _rad.postReward(
+            _tokenAddress, 
+            "You're Rad!", 
+            true, 
+            false
+            )
+        
+        let _rewardId = await _rad.rewardId(_poster, _tokenAddress);
+        let _claim = await _rad.claimReward(_rewardId);
+        let _approve = _rad.approve(_claimant, _poster);
+        let _isRewardClaimant = await _rad.isRewardClaimant(_claimant, _rewardId);
+        
+        console.log(_isRewardClaimant)
+        assert.strictEqual(_isRewardClaimant, true, 'Should be reward claimant');
+    });
+
 })
