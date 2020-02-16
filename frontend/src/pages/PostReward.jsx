@@ -105,7 +105,7 @@ class PostReward extends Component {
                         <tbody>
                             {this.state.rewards !== [] ? this.state.rewards.map((val, idx, arr) => {
                                 return <tr key={idx}>
-                                    <td>{idx}</td>
+                                    <td><code>{idx}</code></td>
                                     <td>{val}</td>
                                 </tr>
                             }) : <></>}
@@ -113,11 +113,6 @@ class PostReward extends Component {
                     </table>
                 </Col>
             </Row>
-            <div>
-                <p>Source: <code>{this.state.source}</code></p>
-                <p>Reward: <code>{this.state.reward}</code></p>
-                <p>Type: <code>{this.state.erc}</code></p>
-            </div>
         </div>;
     }
 }

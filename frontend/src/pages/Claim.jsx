@@ -44,9 +44,6 @@ class Claim extends Component {
                 />
             </InputGroup>
             <Button onClick={this.submit}>Submit</Button>
-            <div>
-                <p>ID: {this.state.id}</p>
-            </div>
         </div>;
     }
 }
