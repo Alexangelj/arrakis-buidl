@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import logo from '../bufficorn.png';
-import ribbon from '../green-ribbon-512.png';
+import green_ribbon from '../green-ribbon-512.png';
+import orange_ribbon from '../orange-ribbon-512.png';
 
 function RewardComponent(reward) {
-    return <Row key={reward.id} style={{ padding: 12 }}>
+    return <Row key={reward.id} style={{ padding: 12, width: 420 }}>
         <Col sm={5}>
             <div className="imgContainer">
-                <img style={{ width: 64 }} src={ribbon} />
+                <img style={{ width: 64 }} src={reward.nftName === "" ? green_ribbon : orange_ribbon} />
                 <div className="centeredText">{reward.id}</div>
             </div>
         </Col>
         <Col sm={7}>
             <span>{reward.reward}</span>
+            <p>{reward.nftName !== "" ? `NFT: ${reward.nftName}` : ""}</p>
         </Col>
 
     </Row>;
@@ -58,15 +60,18 @@ class Home extends Component {
 
         // get rewards strings from my reward IDs
         let myRewards = [];
+        let nftNames = [];
         for (let i = 0; i < myRewardIds.length; i++) {
             myRewards.push(await c.methods.rewardString(myRewardIds[i]).call());
+            nftNames.push(await c.methods.nftName(myRewardIds[i]).call());
         }
         console.log(myRewards);
         let identifiedRewards = [];
         myRewards.map((val, idx, arr) => {
             let r = {
                 "reward": val,
-                "id": myRewardIds[idx]
+                "id": myRewardIds[idx],
+                "nftName": nftNames[idx]
             };
             console.log("reward", r);
             identifiedRewards.push(r);

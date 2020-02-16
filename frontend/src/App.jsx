@@ -15,13 +15,11 @@ import PostReward from './pages/PostReward';
 import Claim from './pages/Claim';
 import Home from './pages/Home';
 
-// ABIs
+// ABI
 import RadAbi from './abi/bin/Rad.abi';
-import Test20 from './abi/bin/Test20.abi';
 
 const WEB3_HOST = "http://localhost:7545";
-const RAD_CONTRACT_ADDRESS = "0x7C0EF209d35A4723efB3096d5Dc871663DCa1b92";
-const TEST20_CONTRACT_ADDRESS = "0x4A5da114416fE57Fe069736dd8F904800F1E431D";
+const RAD_CONTRACT_ADDRESS = "0x812124c376e1141Ab4686b331fa60391Bc50Abaa";
 
 class App extends Component {
   constructor(props) {
@@ -48,14 +46,10 @@ class App extends Component {
     const rad_abi = await this.getAbi(RadAbi);
     let rad_contract = await this.contract(rad_abi, RAD_CONTRACT_ADDRESS);
 
-    // test20
-    const test20_abi = await this.getAbi(Test20);
-    let test20_contract = await this.contract(test20_abi, TEST20_CONTRACT_ADDRESS);
-
     let admin = await rad_contract.methods.admin().call();
     console.log(admin);
 
-    this.setState({ defaultAccount, rad_contract, test20_contract });
+    this.setState({ defaultAccount, rad_contract });
   }
   async getAbi(file) {
     let response = await axios.get(file);
