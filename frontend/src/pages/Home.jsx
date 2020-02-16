@@ -11,7 +11,7 @@ function RewardComponent(reward) {
                 <div className="centeredText">{reward.id}</div>
             </div>
         </Col>
-        <Col sm={5}>
+        <Col sm={7}>
             <span>{reward.reward}</span>
         </Col>
 
