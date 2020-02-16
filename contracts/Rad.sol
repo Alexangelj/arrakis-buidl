@@ -66,6 +66,10 @@ contract Rad is RadInterface {
     // Maps IDs to Source Addresses
     mapping (uint256 => address) public rewardSourceAddress;
 
+    // Maps IDs to Reward String
+
+    mapping (uint256 => string) public rewardString;
+
     // Maps erc20 and erc721 standard checks to an ID
     mapping (uint256 => mapping (uint256 => bool)) public interfaceType;
 
@@ -112,7 +116,7 @@ contract Rad is RadInterface {
         require(msg.sender == admin, 'Not the owner of source contract'); // placeholder for checking owner of source contract
         require(_erc20 || _erc721, 'Cannot be both erc20 and erc721');
         
-        
+        rewardString[rewardNonce] = _reward;
         rewardId[msg.sender][_source] = rewardNonce;
         rewardSourceAddress[rewardNonce] = _source;
 
