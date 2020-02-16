@@ -4,14 +4,14 @@ import logo from '../bufficorn.png';
 import ribbon from '../green-ribbon-512.png';
 
 function RewardComponent(reward) {
-    return <Row key={reward.id}>
-        <Col sm={4}>
+    return <Row key={reward.id} style={{ padding: 12 }}>
+        <Col sm={5}>
             <div className="imgContainer">
                 <img style={{ width: 64 }} src={ribbon} />
                 <div className="centeredText">{reward.id}</div>
             </div>
         </Col>
-        <Col sm={6}>
+        <Col sm={5}>
             <span>{reward.reward}</span>
         </Col>
 
@@ -86,7 +86,7 @@ class Home extends Component {
     render() {
         return <header className="App-header">
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
-            My Rewards
+            <code>My Rewards</code>
             {this.state.rewards !== [] ? this.state.rewards.map((val, idx, arr) => {
                 return RewardComponent(val);
             }) : <></>}
