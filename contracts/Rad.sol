@@ -120,7 +120,7 @@ contract Rad is RadInterface {
         interfaceType[rewardNonce][erc721Id] = _erc721;
         
         rewardNonce += 1;
-        return rewardNonce -= 1;
+        return rewardNonce - 1;
     }
 
     function claimReward(uint256 _identification) public returns (bool success) {
