@@ -2,6 +2,7 @@
 const Rad = artifacts.require("Rad");
 const assert = require('assert').strict;
 const Test20 = artifacts.require("Test20");
+const Test721 = artifacts.require("Test721");
 
 contract('Rad Test', accounts => {
 
@@ -104,6 +105,31 @@ contract('Rad Test', accounts => {
             "You're Rad!", 
             true, 
             false
+            )
+        
+        let _rewardId = await _rad.rewardId(_poster, _tokenAddress);
+        let _claim = await _rad.claimReward(_rewardId);
+        let _approve = _rad.approve(_claimant, _poster);
+        let _isRewardClaimant = await _rad.isRewardClaimant(_claimant, _rewardId);
+        
+        console.log(_isRewardClaimant)
+        assert.strictEqual(_isRewardClaimant, true, 'Should be reward claimant');
+    });
+
+    it('Post, Claim, Check ERC721 Reward', async () => {
+        var totalSupply = (10**18).toString()
+        let _rad = await Rad.deployed()
+        let _token = await Test721.deployed()
+        let _tokenAddress = _token.address
+        let _admin = await _rad.admin()
+        let _poster = Alice
+        let _claimant = Alice
+        let _reward = "You're Rad!"
+        let _post = await _rad.postReward(
+            _tokenAddress, 
+            "You're Rad cause you have an NFT!", 
+            false, 
+            true
             )
         
         let _rewardId = await _rad.rewardId(_poster, _tokenAddress);

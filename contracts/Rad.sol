@@ -58,16 +58,33 @@ contract Rad is RadInterface {
     string private expectedName;
     string public testName;
 
+    // fix poster limit to be more than 1 source contract
 
-    mapping (address => string) public rewards;
+    // Maps Posters and Source contracts to an ID
     mapping (address => mapping(address => uint256)) public rewardId; // Address of poster -> address of source contract -> ID of reward
-    mapping (uint256 => mapping (uint256 => bool)) public interfaceType;
-    mapping (uint256 => address) public rewardAddress;
+    
+    // Maps IDs to Source Addresses
+    mapping (uint256 => address) public rewardSourceAddress;
 
+    // Maps erc20 and erc721 standard checks to an ID
+    mapping (uint256 => mapping (uint256 => bool)) public interfaceType;
+
+    // Maps Claimant Address to IDs of Rewards and returns True if claimed
     mapping (address => mapping(uint256 => bool)) private _catalogue;
+
+    // Maps Poster Addresses to IDs of Rewards and returns True if posted
     mapping (address => mapping(uint256 => bool)) private _posters;
 
+    // Maps Addresses of claimants to addresses of users who can view their rewards
     mapping (address => mapping(address => bool)) private _allowances;
+
+    // Maps a nonce value for the amount of times a reward is claimed
+    mapping (uint256 => uint256) public _timesClaimed;
+
+    // Maps a nonce value for the amount of rewards an address has claimed
+    mapping (address => uint256) public _totalClaims;
+
+
 
     constructor() public {
         admin = msg.sender;
@@ -85,14 +102,19 @@ contract Rad is RadInterface {
         }
     }
 
+    function updateAnalytics(address _owner, uint256 _identification) internal returns (bool) {
+        _timesClaimed[_identification] += 1;
+        _totalClaims[_owner] += 1;
+        return true;
+    }
+
     function postReward(address _source, string memory _reward, bool _erc20, bool _erc721) public override returns (uint256 id) {
         require(msg.sender == admin, 'Not the owner of source contract'); // placeholder for checking owner of source contract
         require(_erc20 || _erc721, 'Cannot be both erc20 and erc721');
         
-        reward = _reward;
-        rewards[_source] = _reward;
+        
         rewardId[msg.sender][_source] = rewardNonce;
-        rewardAddress[rewardNonce] = _source;
+        rewardSourceAddress[rewardNonce] = _source;
 
         interfaceType[rewardNonce][erc20Id] = _erc20;
         interfaceType[rewardNonce][erc721Id] = _erc721;
@@ -103,20 +125,24 @@ contract Rad is RadInterface {
 
     function claimReward(uint256 _identification) public returns (bool success) {
         if (interfaceType[_identification][erc20Id]) {
-            Erc20Token erc20 = Erc20Token(rewardAddress[_identification]);
+            Erc20Token erc20 = Erc20Token(rewardSourceAddress[_identification]);
             testBalance = erc20.balanceOf(msg.sender);
             if (testBalance > balThreshold){
                 _catalogue[msg.sender][_identification] = true;
+                _timesClaimed[_identification] += 1;
+                _totalClaims[msg.sender] += 1;
                 return true;
             }
             return false;
         }
 
         if (interfaceType[_identification][erc721Id]) {
-            Erc721Token erc721 = Erc721Token(rewardAddress[_identification]);
+            Erc721Token erc721 = Erc721Token(rewardSourceAddress[_identification]);
             testName = erc721.name();
             if (hashCompareWithLengthCheck(testName, expectedName)) {
                 _catalogue[msg.sender][_identification] = true;
+                _timesClaimed[_identification] += 1;
+                _totalClaims[msg.sender] += 1;
                 return true;
             }
             return true;
