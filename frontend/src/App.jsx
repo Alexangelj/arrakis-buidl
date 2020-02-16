@@ -25,13 +25,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      defaultAccount: ""
+      defaultAccount: "",
+      accounts: []
     };
     this.web3 = new Web3(WEB3_HOST);
   }
   async getDefaultAccount() {
     let accounts = await this.web3.eth.getAccounts();
     return accounts[0];
+  }
+  async getAllAccounts() {
+    let accounts = await this.web3.eth.getAccounts();
+    return accounts;
   }
   async contract(contract_abi, contract_address) {
     return new this.web3.eth.Contract(contract_abi, contract_address, {
@@ -49,7 +54,9 @@ class App extends Component {
     let admin = await rad_contract.methods.admin().call();
     console.log(admin);
 
-    this.setState({ defaultAccount, rad_contract });
+    let accounts = this.getAllAccounts();
+
+    this.setState({ defaultAccount, rad_contract, accounts });
   }
   async getAbi(file) {
     let response = await axios.get(file);

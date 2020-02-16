@@ -5,7 +5,7 @@ import green_ribbon from '../green-ribbon-512.png';
 import orange_ribbon from '../orange-ribbon-512.png';
 
 function RewardComponent(reward) {
-    return <Row key={reward.id} style={{ padding: 12, width: 420 }}>
+    return <Row key={reward.id} style={{ padding: 12, width: 690 }}>
         <Col sm={5}>
             <div className="imgContainer">
                 <img style={{ width: 64 }} src={reward.nftName === "" ? green_ribbon : orange_ribbon} />
@@ -13,8 +13,10 @@ function RewardComponent(reward) {
             </div>
         </Col>
         <Col sm={7}>
-            <span>{reward.reward}</span>
-            <p>{reward.nftName !== "" ? `NFT: ${reward.nftName}` : ""}</p>
+            <div style={{ textAlign: "left" }}>
+                <span>{reward.reward}</span>
+                <span>{reward.nftName !== "" ? ` (NFT: ${reward.nftName})` : ""}</span>
+            </div>
         </Col>
 
     </Row>;
