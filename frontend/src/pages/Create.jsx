@@ -32,11 +32,12 @@ class Create extends Component {
         if (c === undefined) {
             return [];
         }
+
+        // get all rewards
         let rewards = [];
         for (let i = 0; i < nonce; i++) {
             rewards.push(await c.methods.rewardString(i).call());
         }
-        console.log(rewards);
         return rewards;
     }
     async getNonce() {
@@ -45,7 +46,6 @@ class Create extends Component {
             return 0;
         }
         let nonce = await c.methods.rewardNonce().call();
-        console.log(nonce);
         return nonce;
     }
     async submit() {

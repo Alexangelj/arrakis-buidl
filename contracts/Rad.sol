@@ -88,8 +88,6 @@ contract Rad is RadInterface {
     // Maps a nonce value for the amount of rewards an address has claimed
     mapping (address => uint256) public _totalClaims;
 
-
-
     constructor() public {
         admin = msg.sender;
         rewardNonce = 0;
