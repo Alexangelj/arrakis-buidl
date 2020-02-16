@@ -1,6 +1,7 @@
 
 const Rad = artifacts.require("Rad");
 const assert = require('assert').strict;
+const Test20 = artifacts.require("Test20");
 
 contract('Rad Test', accounts => {
 
@@ -67,15 +68,26 @@ contract('Rad Test', accounts => {
     });
 
     it('Generate Reward Function Test', async () => {
+        var totalSupply = (10**18).toString()
         let _rad = await Rad.deployed()
+        let _token = await Test20.deployed()
+        let _tokenAddress = _token.address
         let _admin = await _rad.admin()
         let _reward = "You're Rad!"
         let _post = await _rad.postReward(
-            Alice, 
+            _tokenAddress, 
             "You're Rad!", 
             true, 
             false
             )
+        let _rewardId = 0;
+
+
+        let _claim = await _rad.claimReward(_rewardId);
+
+        let _testBal = await _rad.testBalance();
+        console.log('test balance: ', _testBal.toString())
+        assert.strictEqual(_testBal.toString(), totalSupply, 'Supply should equal test balance');
     });
 
 })

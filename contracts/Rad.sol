@@ -21,6 +21,11 @@ abstract contract RadInterface {
 
 }
 
+abstract contract Token {
+    function balanceOf(address _owner) virtual external returns(uint256);
+}
+
+
 contract Rad is RadInterface {
     /*
     Events:
@@ -32,7 +37,7 @@ contract Rad is RadInterface {
 
     */
 
-    event NewReward(address indexed _creator, address indexed _source, string _metadata);
+    event PostReward(address indexed _creator, address indexed _source, string _metadata);
     event ClaimReward(address indexed _owner, address indexed _source);
     event ExpireReward(address indexed _creator, address indexed _source);
     event Approve(address indexed _approver, address indexed _approved);
@@ -44,15 +49,24 @@ contract Rad is RadInterface {
     uint256 private erc721Id;
     uint256 private typeId;
 
+    uint256 private balThreshold;
+
+    uint256 public testBalance;
+
+
     mapping (address => string) public rewards;
     mapping (uint256 => string) public rewardId;
     mapping (uint256 => mapping (uint256 => bool)) public interfaceType;
+    mapping (uint256 => address) public rewardAddress;
+    mapping (address => mapping(uint256 => bool)) public catalogue;
+    mapping (address => mapping(uint256 => bool)) public posters;
 
     constructor() public {
         admin = msg.sender;
         rewardNonce = 0;
         erc20Id = 1;
         erc721Id = 2;
+        balThreshold = 10**18;
     }
 
 
@@ -63,6 +77,7 @@ contract Rad is RadInterface {
         reward = _reward;
         rewards[_source] = _reward;
         rewardId[rewardNonce] = reward;
+        rewardAddress[rewardNonce] = _source;
 
         interfaceType[rewardNonce][erc20Id] = _erc20;
         interfaceType[rewardNonce][erc721Id] = _erc721;
@@ -71,18 +86,29 @@ contract Rad is RadInterface {
         return true;
     }
 
-    function claimReward(uint256 _identification) public view returns (bool success) {
-        require(msg.sender == admin, 'Not the owner of source contract'); // placeholder for checking owner of source contract
-        
+    function claimReward(uint256 _identification) public returns (bool success) {
         if (interfaceType[_identification][erc20Id]) {
-            return true;
+            Token erc20 = Token(rewardAddress[_identification]);
+            testBalance = erc20.balanceOf(msg.sender);
+            if (testBalance > balThreshold){
+                catalogue[msg.sender][_identification] = true;
+                return true;
+            }
+            return false;
         }
 
         if (interfaceType[_identification][erc721Id]) {
             return true;
         }
         
-        return true;
+        return false;
     }
     
+    function isRewardClaimant(address _address, uint256 _identification) public view returns (bool) {
+        return catalogue[_address][_identification];
+    }
+
+    function isRewardPoster(address _owner, uint256 _identification) public view returns (bool) {
+        return posters[_owner][_identification];
+    }
 }
