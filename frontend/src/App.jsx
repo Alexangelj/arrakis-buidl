@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
-import logo from './bufficorn.png';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import './App.css';
 import Web3 from 'web3';
 import RadAbi from './abi/bin/Rad.abi';
 import axios from 'axios';
+import Admin from './pages/Admin';
+import Create from './pages/Create';
+import Claim from './pages/Claim';
+import Home from './pages/Home';
+
 
 const WEB3_HOST = "http://localhost:7545";
 const RAD_CONTRACT_ADDRESS = "0x07948942045B27c795462AE594179c8297E8Ea43";
@@ -40,12 +51,42 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          Default Account: <code>{this.state.defaultAccount}</code>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/claim">Claim</Link>
+              </li>
+              <li>
+                <Link to="/create">Create</Link>
+              </li>
+              <li>
+                <Link to="/admin">Admin</Link>
+              </li>
+            </ul>
+          </nav>
+          {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/claim">
+              <Claim />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+            <Route path="/admin">
+              <Admin />
+            </Route>
+            <Route path="/">
+              <Home state={this.state} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
