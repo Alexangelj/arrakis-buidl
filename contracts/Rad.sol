@@ -54,9 +54,9 @@ contract Rad is RadInterface {
     uint256 private typeId;
 
     uint256 private balThreshold;
-
     uint256 public testBalance;
-    string public expectedName;
+    string private expectedName;
+    string public testName;
 
 
     mapping (address => string) public rewards;
@@ -77,6 +77,13 @@ contract Rad is RadInterface {
         balThreshold = 10**17;
     }
 
+    function hashCompareWithLengthCheck(string memory a, string memory b) internal returns (bool) {
+        if(bytes(a).length != bytes(b).length) {
+            return false;
+        } else {
+            return (keccak256(abi.encodePacked(a))) == (keccak256(abi.encodePacked(b)));
+        }
+    }
 
     function postReward(address _source, string memory _reward, bool _erc20, bool _erc721) public override returns (uint256 id) {
         require(msg.sender == admin, 'Not the owner of source contract'); // placeholder for checking owner of source contract
@@ -106,9 +113,9 @@ contract Rad is RadInterface {
         }
 
         if (interfaceType[_identification][erc721Id]) {
-            Erc721Token erc721 = Erc721Token(rewardAddress[_identifier]);
+            Erc721Token erc721 = Erc721Token(rewardAddress[_identification]);
             testName = erc721.name();
-            if (testName == expectedName) {
+            if (hashCompareWithLengthCheck(testName, expectedName)) {
                 _catalogue[msg.sender][_identification] = true;
                 return true;
             }

@@ -5,7 +5,7 @@ import "./openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "./openzeppelin/contracts/token/ERC721/IERC721Metadata.sol";
 import "./openzeppelin/contracts/introspection/ERC165.sol";
 
-contract ERC721Metadata is Context, ERC165, ERC721, IERC721Metadata {
+contract Test721 is Context, ERC165, ERC721, IERC721Metadata {
     // Token name
     string private _name;
 
