@@ -5,7 +5,7 @@ class Claim extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: 0
+            id: -1
         }
         this.submit = this.submit.bind(this);
     }
@@ -14,9 +14,10 @@ class Claim extends Component {
         this.setState({ id });
     }
     async submit() {
-        if (this.state.id === 0) {
+        if (this.state.id === -1) {
             return;
         }
+        console.log(this.state.id);
         let c = this.props.state.rad_contract;
         let claimResult = await c.methods.claimReward(this.state.id).send({
             from: this.props.state.defaultAccount,
@@ -24,7 +25,7 @@ class Claim extends Component {
         });
         console.log(claimResult);
         this.setState({
-            id: 0
+            id: -1
         });
     }
     render() {
@@ -37,7 +38,7 @@ class Claim extends Component {
                             placeholder="ID"
                             aria-label="ID"
                             aria-describedby="basic-addon1"
-                            onChange={(e) => this.setSource(e.target.value)}
+                            onChange={(e) => this.setId(e.target.value)}
                             value={this.state.id}
                         />
                     </InputGroup>

@@ -7,9 +7,16 @@ class Create extends Component {
         this.state = {
             source: "",
             reward: "",
-            erc: ""
+            erc: "",
+            rewards: []
         }
         this.submit = this.submit.bind(this);
+        this.getRewards = this.getRewards.bind(this);
+        this.getNonce = this.getNonce.bind(this);
+        console.log("master state", this.props.state);
+    }
+    async componentDidMount() {
+        await this.setState({ rewards: await this.getRewards(await this.getNonce()) });
     }
     setSource(source) {
         this.setState({ source });
@@ -20,6 +27,27 @@ class Create extends Component {
     setErc(erc) {
         this.setState({ erc });
     }
+    async getRewards(nonce) {
+        let c = this.props.state.rad_contract;
+        if (c === undefined) {
+            return [];
+        }
+        let rewards = [];
+        for (let i = 0; i < nonce; i++) {
+            rewards.push(await c.methods.rewardString(i).call());
+        }
+        console.log(rewards);
+        return rewards;
+    }
+    async getNonce() {
+        let c = this.props.state.rad_contract;
+        if (c === undefined) {
+            return 0;
+        }
+        let nonce = await c.methods.rewardNonce().call();
+        console.log(nonce);
+        return nonce;
+    }
     async submit() {
         let c = this.props.state.rad_contract;
         let isErc20 = this.state.erc === "erc20";
@@ -28,13 +56,16 @@ class Create extends Component {
             gas: 3000000
         });
         console.log(postResult);
+        let rewards = await this.getRewards(await this.getNonce());
         this.setState({
             source: "",
             reward: "",
-            erc: ""
+            erc: "",
+            rewards
         });
     }
     render() {
+        console.log(this.state.rewards);
         return <div className="container">
             Create
             <Row>
@@ -62,16 +93,28 @@ class Create extends Component {
                         ERC20
                     </InputGroup>
                     <InputGroup className="mb-3">
-                        <InputGroup.Radio name="erc" aria-label="Erc721" onClick={() => this.setErc("erc721")} checked={this.state.erc === "erc721"} />
-                        ERC721
+                        <InputGroup.Radio name="erc" aria-label="NFT" onClick={() => this.setErc("erc721")} checked={this.state.erc === "erc721"} />
+                        NFT
                     </InputGroup>
                     <Button onClick={this.submit}>Submit</Button>
                 </Col>
+                <Col sm={6}>
+                    <table>
+                        <tbody>
+                            {this.state.rewards !== [] ? this.state.rewards.map((val, idx, arr) => {
+                                return <tr key={idx}>
+                                    <td>{idx}</td>
+                                    <td>{val}</td>
+                                </tr>
+                            }) : <></>}
+                        </tbody>
+                    </table>
+                </Col>
             </Row>
             <div>
-                <p>Source: {this.state.source}</p>
-                <p>Reward: {this.state.reward}</p>
-                <p>Type: {this.state.erc}</p>
+                <p>Source: <code>{this.state.source}</code></p>
+                <p>Reward: <code>{this.state.reward}</code></p>
+                <p>Type: <code>{this.state.erc}</code></p>
             </div>
         </div>;
     }
