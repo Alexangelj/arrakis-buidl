@@ -5,19 +5,23 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
 import './App.css';
 import Web3 from 'web3';
-import RadAbi from './abi/bin/Rad.abi';
 import axios from 'axios';
+
+// pages
 import Admin from './pages/Admin';
 import Create from './pages/Create';
 import Claim from './pages/Claim';
 import Home from './pages/Home';
 
+// ABIs
+import RadAbi from './abi/bin/Rad.abi';
+import Test20 from './abi/bin/Test20.abi';
 
 const WEB3_HOST = "http://localhost:7545";
-const RAD_CONTRACT_ADDRESS = "0x07948942045B27c795462AE594179c8297E8Ea43";
+const RAD_CONTRACT_ADDRESS = "0xC69d20c4a0787B9854C26DbAD270ECD6F4E3E55d";
+const TEST20_CONTRACT_ADDRESS = "0x15392d4859E75e37ECf0B7BD19b1d148EE21E105";
 
 class App extends Component {
   constructor(props) {
@@ -39,11 +43,19 @@ class App extends Component {
   }
   async componentDidMount() {
     const defaultAccount = await this.getDefaultAccount();
+
+    // rad
     const rad_abi = await this.getAbi(RadAbi);
     let rad_contract = await this.contract(rad_abi, RAD_CONTRACT_ADDRESS);
+
+    // test20
+    const test20_abi = await this.getAbi(Test20);
+    let test20_contract = await this.contract(test20_abi, TEST20_CONTRACT_ADDRESS);
+
     let admin = await rad_contract.methods.admin().call();
     console.log(admin);
-    this.setState({ defaultAccount, rad_contract });
+
+    this.setState({ defaultAccount, rad_contract, test20_contract });
   }
   async getAbi(file) {
     let response = await axios.get(file);
@@ -73,13 +85,13 @@ class App extends Component {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/claim">
-              <Claim />
+              <Claim state={this.state} />
             </Route>
             <Route path="/create">
-              <Create />
+              <Create state={this.state} />
             </Route>
             <Route path="/admin">
-              <Admin />
+              <Admin state={this.state} />
             </Route>
             <Route path="/">
               <Home state={this.state} />
